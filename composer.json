@@ -2,7 +2,7 @@
   "name": "twisted1919/yii2-notify",
   "type": "yii2-extension",
   "description": "Success/Error/Warning/Info notification component",
-  "keywords": ["yii2", "options", "settings"],
+  "keywords": ["yii2", "notify", "notifications"],
   "license": "MIT",
   "support": {
     "issues": "https://github.com/twisted1919/yii2-notify/issues",
