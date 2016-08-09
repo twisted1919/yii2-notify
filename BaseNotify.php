@@ -99,9 +99,9 @@ class BaseNotify extends Component
         if (count($error) > 0) {
             $liItems = [];
             foreach ($error as $message) {
-                $liItems[] = Html::tag('li', [], $message);
+                $liItems[] = Html::tag('li', $message, []);
             }
-            $ul = Html::tag('ul', [], implode("\n", $liItems));
+            $ul = Html::tag('ul', implode("\n", $liItems), []);
 
             $content = '';
             if ($this->htmlCloseButton) {
@@ -117,9 +117,9 @@ class BaseNotify extends Component
         if (count($warning) > 0) {
             $liItems = [];
             foreach ($warning as $message) {
-                $liItems[] = Html::tag('li', [], $message);
+                $liItems[] = Html::tag('li', $message, []);
             }
-            $ul = Html::tag('ul', [], implode("\n", $liItems));
+            $ul = Html::tag('ul', implode("\n", $liItems), []);
 
             $content = '';
             if ($this->htmlCloseButton) {
@@ -135,9 +135,9 @@ class BaseNotify extends Component
         if (count($info) > 0) {
             $liItems = [];
             foreach ($info as $message) {
-                $liItems[] = Html::tag('li', [], $message);
+                $liItems[] = Html::tag('li', $message, []);
             }
-            $ul = Html::tag('ul', [], implode("\n", $liItems));
+            $ul = Html::tag('ul', implode("\n", $liItems), []);
 
             $content = '';
             if ($this->htmlCloseButton) {
@@ -153,9 +153,9 @@ class BaseNotify extends Component
         if (count($success) > 0) {
             $liItems = [];
             foreach ($success as $message) {
-                $liItems[] = Html::tag('li', [], $message);
+                $liItems[] = Html::tag('li', $message, []);
             }
-            $ul = Html::tag('ul', [], implode("\n", $liItems));
+            $ul = Html::tag('ul', implode("\n", $liItems), []);
 
             $content = '';
             if ($this->htmlCloseButton) {
