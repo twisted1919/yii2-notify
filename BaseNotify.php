@@ -201,6 +201,11 @@ class BaseNotify extends Component
         if (!is_array($message)) {
             $message = [$message];
         }
+        
+        $message = $this->removeEmptyMessages($message);
+        if (empty($message)) {
+        	return $this;
+        }
 
         if ($this->getIsCli()) {
             if (!isset($this->cliMessages[self::ERROR])) {
@@ -227,6 +232,11 @@ class BaseNotify extends Component
             $message = [$message];
         }
 
+	    $message = $this->removeEmptyMessages($message);
+	    if (empty($message)) {
+		    return $this;
+	    }
+	    
         if ($this->getIsCli()) {
             if (!isset($this->cliMessages[self::WARNING])) {
                 $this->cliMessages[self::WARNING] = [];
@@ -252,6 +262,11 @@ class BaseNotify extends Component
             $message = [$message];
         }
 
+	    $message = $this->removeEmptyMessages($message);
+	    if (empty($message)) {
+		    return $this;
+	    }
+	    
         if ($this->getIsCli()) {
             if (!isset($this->cliMessages[self::INFO])) {
                 $this->cliMessages[self::INFO] = [];
@@ -277,6 +292,11 @@ class BaseNotify extends Component
             $message = [$message];
         }
 
+	    $message = $this->removeEmptyMessages($message);
+	    if (empty($message)) {
+		    return $this;
+	    }
+	    
         if ($this->getIsCli()) {
             if (!isset($this->cliMessages[self::SUCCESS])) {
                 $this->cliMessages[self::SUCCESS] = [];
@@ -510,5 +530,20 @@ class BaseNotify extends Component
     public function getIsCli()
     {
         return php_sapi_name() == 'cli' || (!isset($_SERVER['SERVER_SOFTWARE']) && !empty($_SERVER['argv']));
+    }
+
+	/**
+	 * @param array $messages
+	 *
+	 * @return array
+	 */
+    protected function removeEmptyMessages(array $messages = [])
+    {
+	    foreach ($messages as $key => $value) {
+		    if (empty($value)) {
+			    unset($messages[$key]);
+		    }
+	    }
+	    return array_values($messages);
     }
 }
