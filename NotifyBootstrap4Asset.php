@@ -2,7 +2,7 @@
 
 namespace twisted1919\notify;
 
-class NotifyAssetBootstrap4 extends NotifyAsset
+class NotifyBootstrap4Asset extends NotifyAsset
 {
     /**
      * @var array
