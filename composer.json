@@ -16,6 +16,7 @@
   "require": {
     "php": ">=5.4",
     "yiisoft/yii2": "*",
+    "yiisoft/yii2-bootstrap4"
     "twisted1919/yii2-shortcut-functions": "*"
   },
   "autoload": {
